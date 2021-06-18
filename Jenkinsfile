@@ -3,7 +3,7 @@ node{
     echo "welcome ${name} to AJHUB"
     stage('SCM checkout'){
         
-        git 'https://github.com/devopsmail26/my-app.git'
+        git 'https://github.com/devopsmail26/jenkins-first-pipe.git'
     }
     stage('Compile Package'){
         
