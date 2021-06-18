@@ -11,4 +11,12 @@ node{
         
         sh "${mvnHome}/bin/mvn package"
     }
+    stage('email sending'){
+        mail bcc: '', body: '''HI dude,
+
+        We are testing the jenkins job with mail.
+
+        Regards,
+        Jingidi''', cc: '', from: '', replyTo: '', subject: 'Jenkins test job', to: 'anveshj33@gmail.com'   
+    }
 }
