@@ -19,4 +19,12 @@ node{
         Regards,
         Jingidi''', cc: '', from: '', replyTo: '', subject: 'Jenkins test job', to: 'anveshj33@gmail.com'   
     }
+    stage('slack notification'){
+       slackSend baseUrl: 'https://hooks.slack.com/services/', 
+       channel: 'software-jingidies', 
+       color: 'good', message: 'testing pipelines scripts with jingidies', 
+       teamDomain: 'anveshj33', 
+       tokenCredentialId: 'software-jingidies-slack-token', 
+       username: 'Jenkins jingidy'
+    }
 }
