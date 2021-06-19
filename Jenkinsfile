@@ -1,4 +1,4 @@
-properties([parameters([choice(choices: 'master\nmain\nfeature1', 'feature2'], description: 'select any one branch so that i can process this pipeline', name: 'Branch')]), pipelineTriggers([pollSCM('1 * * * *')])])
+properties([parameters([choice(choices: 'master\nmain\nfeature1\nfeature2', description: 'select any one branch so that i can process this pipeline', name: 'Branch')]), pipelineTriggers([pollSCM('1 * * * *')])])
 
 node{
     def name = "DUDE"
