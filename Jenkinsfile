@@ -1,9 +1,11 @@
+properties([parameters([choice(choices: 'master\nmain\nfeature1', 'feature2'], description: 'select any one branch so that i can process this pipeline', name: 'Branch')]), pipelineTriggers([pollSCM('1 * * * *')])])
+
 node{
     def name = "DUDE"
     echo "welcome ${name} to AJHUB"
     stage('SCM checkout'){
         
-        git 'https://github.com/devopsmail26/jenkins-first-pipe.git'
+        git url: 'https://github.com/devopsmail26/jenkins-first-pipe.git', branch: "${params.Branch}"
     }
     stage('Compile Package'){
         
